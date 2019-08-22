@@ -4,6 +4,11 @@ public class Administrativo extends Empleado{
     private int hsExtra;
     private int hsMes;
 
+    public Administrativo( int dni,String nombre,String apellido,String mail,int sueldoBase){
+        super(dni, nombre, apellido, mail, sueldoBase);
+        this.hsExtra= hsExtra;
+        this.hsMes = hsMes;
+    }
 
     public int getHsExtra() {
         return hsExtra;

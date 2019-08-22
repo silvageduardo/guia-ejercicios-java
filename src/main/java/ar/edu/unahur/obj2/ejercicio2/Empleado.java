@@ -1,5 +1,7 @@
 package ar.edu.unahur.obj2.ejercicio2;
 
+import java.security.PublicKey;
+
 public class Empleado {
     private int dni;
     private String nombre;
@@ -7,11 +9,17 @@ public class Empleado {
     private String mail;
     private int sueldoBase;
 
+    public Empleado( int dni,String nombre,String apellido,String mail,int sueldoBase){
+
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.mail =mail;
+        this.sueldoBase = sueldoBase;
+    }
+
     public int getDni(){
         return dni;
-    }
-    public void setDni(int nuevoDni){
-        this.dni= nuevoDni;
     }
 
 
@@ -19,31 +27,19 @@ public class Empleado {
         return nombre;
     }
 
-    public void setNombre(String nuevoNombre) {
-        this.nombre = nombre;
-    }
 
     public String getApellido() {
         return apellido;
     }
 
-    public void setApellido(String nuevoApellido) {
-        this.apellido = apellido;
-    }
 
     public String getMail() {
         return mail;
     }
 
-    public void setMail(String nuevoMail) {
-        this.mail = mail;
-    }
 
     public int getSueldoBase() {
         return sueldoBase;
     }
 
-    public void setSueldoBase(int nuevoSueldoBase) {
-        this.sueldoBase = sueldoBase;
-    }
 }
