@@ -3,6 +3,7 @@ package ar.edu.unahur.obj2.ejercicio32;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -40,8 +41,12 @@ public class EmpleadoTest {
     public void testListadoEmpresas(){
         listaEmpresas.add(claro);
         listaEmpresas.add(movistar);
-        assertEquals(getListaEmpresas(),"[Empresa{nombre='Claro', anyoFundacion='1980', listaEmpleados=[]}, " +
-                                             "Empresa{nombre='Movistar', anyoFundacion='1980', listaEmpleados=[]}]");
+        List<Empresa> listaEmpresas = new ArrayList<>();
+        listaEmpresas.add(claro);
+        listaEmpresas.add(movistar);
+
+
+        assertEquals(getListaEmpresas(),listaEmpresas);
 
 
     }
@@ -52,10 +57,10 @@ public class EmpleadoTest {
          listaEmpresas.add(movistar);
          claro.listaEmpleados.add(jorge);
          movistar.listaEmpleados.add(raul);
-         assertEquals(listaEmpresas.stream().map(e -> e.getNombre() + e.getListaEmpleados()).collect(Collectors.toList()),
-                 "[Claro[Empleado{nombre='jorge', apellido='gonzales', fechaNacimiento='10/10/1990', fechaContrato='10/10/2010'}]," +
-                         " Movistar[Empleado{nombre='raul', apellido='gonzales', fechaNacimiento='10/10/1990', fechaContrato='10/10/2010'}]]");
+         List<Empleado> empleados = new ArrayList<>();
+         empleados.add(jorge);
 
+         assertEquals(claro.getListaEmpleados(),empleados);
 
      }
 
